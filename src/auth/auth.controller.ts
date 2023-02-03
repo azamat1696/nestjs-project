@@ -1,6 +1,5 @@
-import {Body, Controller, HttpCode, HttpStatus, Post, Req, UploadedFile, UseInterceptors} from "@nestjs/common";
+import {Body, Controller, HttpCode, HttpStatus, Post, Req, UploadedFile, UseInterceptors,Get} from "@nestjs/common";
 import {AuthService} from "./auth.service";
-import {FileInterceptor} from "@nestjs/platform-express";
 import {AuthDto} from "./dto";
 
 @Controller('auth')
@@ -17,4 +16,5 @@ export class AuthController {
     signin(@Body() dto:AuthDto){
         return this.authService.signin(dto)
     }
+
 }
